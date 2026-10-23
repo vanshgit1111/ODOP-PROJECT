@@ -1,0 +1,48 @@
+{
+  "name": "odop-link",
+  "version": "1.0.0",
+  "description": "ODOP Link - Market Linkage and Traceability for Kashmiri Walnuts",
+  "author": "ODOP Link Team",
+  "main": "main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron": "electron .",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "gov.jk.odop.link",
+    "productName": "ODOP Link",
+    "directories": {
+      "output": "release"
+    },
+    "mac": {
+      "category": "public.app-category.business",
+      "target": [
+        "dmg"
+      ],
+      "identity": null
+    },
+    "dmg": {
+      "title": "ODOP Link - Kashmiri Walnuts"
+    },
+    "files": [
+      "dist/**/*",
+      "main.cjs",
+      "preload.cjs",
+      "package.json"
+    ]
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.1.0"
+  }
+}
